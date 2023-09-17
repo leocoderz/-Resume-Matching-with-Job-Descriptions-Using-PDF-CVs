@@ -1,89 +1,61 @@
-# Resume Matching with Job Descriptions
+# Resume Matching with Job Descriptions Using PDF CVs
 
-![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
-
-This repository contains code and resources for matching resumes with job descriptions using PDF CVs and PDFExtractor. The project includes two Jupyter notebooks (`ResumeMatching.ipynb` and `PDFExtractor.ipynb`), as well as sample CSV data files (`resume_data.csv` and `training_data.csv`) for training and testing the model.
+This project is designed to help you match job descriptions with resumes extracted from PDF files. It includes two main components: PDF CV extraction using the `PDFExtractor.ipynb` notebook and resume matching using the `Resume_Matching.ipynb` notebook. Additionally, you'll find two datasets: `resume_data.csv` and `training_data.csv`, which are used for training and testing the matching algorithm.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Requirements](#requirements)
-- [Usage](#usage)
-- [Notebooks](#notebooks)
-- [Data Files](#data-files)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [PDF CV Extraction](#pdf-cv-extraction)
+- [Resume Matching](#resume-matching)
 - [License](#license)
 
 ## Introduction
 
-Matching resumes to job descriptions is a crucial step in the recruitment process. This project aims to automate this process by extracting text from PDF resumes using PDFExtractor and comparing it with job descriptions to find the most suitable candidates.
+Recruiting the right candidate for a job can be a time-consuming process, especially when you have to manually review countless resumes. This project aims to automate the resume matching process by extracting text from PDF CVs and then comparing them with job descriptions using natural language processing techniques.
 
-Key features of this project include:
-- Extraction of text from PDF resumes.
-- Matching extracted text with job descriptions.
-- Ranking candidates based on their suitability.
+## Getting Started
 
-## Requirements
+### Prerequisites
 
-To run the code in this repository, you'll need the following dependencies:
+Before you begin, ensure you have the following prerequisites installed:
 
+For PDF CV Extraction:
 - Python 3.x
-- Jupyter Notebook
-- PDFExtractor library
-- Pandas
-- Scikit-Learn
+- `pypdf` library
+- `pandas` library
 
-You can install these dependencies using `pip`:
+For Resume Matching:
+- Python 3.x
+- `pandas` library
+- `numpy` library
+- `re` library
+- `spacy` library
+- `sklearn` library
+- `string` library
+- `transformers` library
+- `torch` library
+
+### Installation
+
+To install the required packages, you can use pip:
 
 ```bash
-pip install jupyter pandas scikit-learn
+pip install pypdf pandas numpy scikit-learn spacy torch transformers
 ```
 
-For PDFExtractor, please follow the installation instructions provided in the `PDFExtractor.ipynb` notebook.
+## PDF CV Extraction
 
-## Usage
+The `PDFExtractor.ipynb` notebook is designed to extract text from PDF CVs. It uses the `pypdf` library to read PDF files and save the extracted text to a CSV file. To use this notebook, follow the instructions provided within the notebook.
 
-1. Clone this repository to your local machine:
+## Resume Matching
 
-```bash
-git clone https://github.com/your-username/resume-matching.git
-cd resume-matching
-```
-
-2. Install the required dependencies as mentioned in the "Requirements" section.
-
-3. Open the Jupyter notebooks and follow the instructions provided in the notebooks:
-   - `PDFExtractor.ipynb`: This notebook demonstrates how to extract text from PDF resumes using PDFExtractor.
-   - `ResumeMatching.ipynb`: This notebook shows how to match extracted resume text with job descriptions and rank candidates.
-
-4. Use the provided CSV files (`resume_data.csv` and `training_data.csv`) for testing and training your model.
-
-## Notebooks
-
-### PDFExtractor.ipynb
-
-This notebook provides step-by-step instructions for extracting text from PDF resumes using PDFExtractor. It covers:
-- Installation of PDFExtractor
-- Loading and extracting text from PDF resumes
-- Cleaning and preprocessing extracted text
-
-### ResumeMatching.ipynb
-
-This notebook demonstrates how to match extracted resume text with job descriptions and rank candidates based on their suitability. It includes:
-- Loading resume and job description data
-- Text preprocessing and feature extraction
-- Building a matching model
-- Ranking candidates
-
-## Data Files
-
-### resume_data.csv
-
-This CSV file contains sample resume data that can be used for testing and experimentation. Each row represents a resume with relevant information.
-
-### training_data.csv
-
-This CSV file contains training data for building and training the matching model. It includes pairs of resumes and job descriptions along with labels indicating whether they are a good match or not.
+The `Resume_Matching.ipynb` notebook demonstrates how to match resumes with job descriptions. It uses natural language processing techniques to preprocess and vectorize text data, and then it calculates the cosine similarity between resumes and job descriptions. This allows you to rank candidates based on how well their resumes match the job requirements.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. Feel free to use, modify, and distribute this code for your own purposes.
+This project is licensed under the GNU General Public License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+
+Feel free to customize and use this project to streamline your recruiting process. If you have any questions or need further assistance, please don't hesitate to reach out.
